@@ -11,7 +11,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130209203315) do
+ActiveRecord::Schema.define(:version => 20130209233348) do
+
+  create_table "__sm_ext_mgmt", :force => true do |t|
+    t.text "type",  :null => false
+    t.text "value"
+  end
+
+  create_table "microposts", :force => true do |t|
+    t.string   "content"
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "name"
